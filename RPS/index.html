@@ -30,21 +30,21 @@
           <div class="panel-body">
             <form class="form-inline">
               <div class="form-group">
-                <button type="submit" value="rock" class="btn btn-primary" id="player-rock-btn">
+                <button value="rock" class="btn btn-primary" id="player-rock-btn">
                   <i class="fa fa-hand-rock-o"></i> Rock</button>
               </div>
               <div class="form-group">
-                <button type="submit" value="paper" class="btn btn-primary" id="player-paper-btn">
+                <button value="paper" class="btn btn-primary" id="player-paper-btn">
                   <i class="fa fa-hand-paper-o"></i> Paper</button>
               </div>
               <div class="form-group">
-                <button type="submit" value="scissors" class="btn btn-primary" id="player-scissors-btn">
+                <button value="scissors" class="btn btn-primary" id="player-scissors-btn">
                   <i class="fa fa-hand-scissors-o"></i> Scissors</button>
               </div>
             </form>
-            <i class="fa fa-hand-rock-o fa-5x hidden"></i>
-            <i class="fa fa-hand-paper-o fa-5x hidden"></i>
-            <i class="fa fa-hand-scissors-o fa-5x hidden"></i>
+            <i class="fa fa-hand-rock-o fa-5x hidden" id="player-rock-icon"></i>
+            <i class="fa fa-hand-paper-o fa-5x hidden" id="player-paper-icon"></i>
+            <i class="fa fa-hand-scissors-o fa-5x hidden" id="player-scissors-icon"></i>
           </div>
         </div>
       </div>
@@ -56,27 +56,29 @@
           <div class="panel-body">
             <form class="form-inline">
               <div class="form-group">
-                <button type="submit" value="rock" class="btn btn-warning" id="computer-rock-btn">
+                <button value="rock" class="btn btn-warning" disabled id="computer-rock-btn">
                   <i class="fa fa-hand-rock-o"></i> Rock</button>
               </div>
               <div class="form-group">
-                <button type="submit" value="paper" class="btn btn-warning" id="computer-paper-btn">
+                <button value="paper" class="btn btn-warning" disabled id="computer-paper-btn">
                   <i class="fa fa-hand-paper-o"></i> Paper</button>
               </div>
               <div class="form-group">
-                <button type="submit" value="scissors" class="btn btn-warning" id="computer-scissors-btn">
+                <button  value="scissors" class="btn btn-warning" disabled id="computer-scissors-btn">
                   <i class="fa fa-hand-scissors-o"></i> Scissors</button>
               </div>
             </form>
-            <i class="fa fa-hand-rock-o fa-5x hidden"></i>
-            <i class="fa fa-hand-paper-o fa-5x hidden"></i>
-            <i class="fa fa-hand-scissors-o fa-5x hidden"></i>
+            <i class="fa fa-hand-rock-o fa-5x hidden" id="computer-rock-icon"></i>
+            <i class="fa fa-hand-paper-o fa-5x hidden" id="computer-paper-icon"></i>
+            <i class="fa fa-hand-scissors-o fa-5x hidden" id="computer-scissors-icon"></i>
+            <div class="loader center hidden" id="load-icon"></div>
           </div>
+          
         </div>
       </div>
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1 text-center">
-          <div class="jumbotron">
+          <div class="jumbotron hidden">
             <h4></h4>
             <button type="submit" value="reset" class="btn btn-primary" id="reset-btn">Play again?</button>
           </div>
