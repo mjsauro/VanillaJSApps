@@ -2,103 +2,121 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Rock, Paper, Scissors</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/darkly/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="stylesheet.css">
 
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1">
-        <div class="jumbotron">
-          <h1>Rock, Paper, or Scissors?</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="jumbotron text-center">
+                    <h2>Rock, Paper, or Scissors?</h2>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="panel panel-info text-center" id="record-panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">Record</div>
+                    </div>
+                    <div class="panel-body">
+                        <p class="lead" id="record-display"></p>
+                        <button class="btn btn-info" id="clear-button">Clear Record</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 text-center">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-title">Rock, Paper, or Scissors</div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <button value="rock" class="btn btn-primary" id="player-rock-btn">
+                                    <i class="fa fa-hand-rock-o"></i> Rock</button>
+                            </div>
+                            <div class="form-group">
+                                <button value="paper" class="btn btn-primary" id="player-paper-btn">
+                                    <i class="fa fa-hand-paper-o"></i> Paper</button>
+                            </div>
+                            <div class="form-group">
+                                <button value="scissors" class="btn btn-primary" id="player-scissors-btn">
+                                    <i class="fa fa-hand-scissors-o"></i> Scissors</button>
+                            </div>
+                        </form>
+                        <i class="fa fa-hand-rock-o fa-5x hidden" id="player-rock-icon"></i>
+                        <i class="fa fa-hand-paper-o fa-5x hidden" id="player-paper-icon"></i>
+                        <i class="fa fa-hand-scissors-o fa-5x hidden" id="player-scissors-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 text-center">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <div class="panel-title">Computer Response</div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <button value="rock" class="btn btn-warning" disabled id="computer-rock-btn">
+                                    <i class="fa fa-hand-rock-o"></i> Rock</button>
+                            </div>
+                            <div class="form-group">
+                                <button value="paper" class="btn btn-warning" disabled id="computer-paper-btn">
+                                    <i class="fa fa-hand-paper-o"></i> Paper</button>
+                            </div>
+                            <div class="form-group">
+                                <button value="scissors" class="btn btn-warning" disabled id="computer-scissors-btn">
+                                    <i class="fa fa-hand-scissors-o"></i> Scissors</button>
+                            </div>
+                        </form>
+                        <i class="fa fa-hand-rock-o fa-5x hidden" id="computer-rock-icon"></i>
+                        <i class="fa fa-hand-paper-o fa-5x hidden" id="computer-paper-icon"></i>
+                        <i class="fa fa-hand-scissors-o fa-5x hidden" id="computer-scissors-icon"></i>
+                        <div class="loader center hidden fa-5x" id="load-icon"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2 text-center">
+                    <div class="panel hidden" id="message-panel">
+                        <div class="panel-heading">
+                            <div class="panel-title">Results</div>
+                        </div>
+                        <div class="panel-body">
+                            <p class="lead" id="result-message"></p>
+                            <button id="reset-btn" onkeypress="location.reload()">Play again?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-5 col-xs-offset-1 text-center">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4>Choose Rock, Paper, or Scissors</h4>
-          </div>
-          <div class="panel-body">
-            <form class="form-inline">
-              <div class="form-group">
-                <button value="rock" class="btn btn-primary" id="player-rock-btn">
-                  <i class="fa fa-hand-rock-o"></i> Rock</button>
-              </div>
-              <div class="form-group">
-                <button value="paper" class="btn btn-primary" id="player-paper-btn">
-                  <i class="fa fa-hand-paper-o"></i> Paper</button>
-              </div>
-              <div class="form-group">
-                <button value="scissors" class="btn btn-primary" id="player-scissors-btn">
-                  <i class="fa fa-hand-scissors-o"></i> Scissors</button>
-              </div>
-            </form>
-            <i class="fa fa-hand-rock-o fa-5x hidden" id="player-rock-icon"></i>
-            <i class="fa fa-hand-paper-o fa-5x hidden" id="player-paper-icon"></i>
-            <i class="fa fa-hand-scissors-o fa-5x hidden" id="player-scissors-icon"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-5 text-center">
-        <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h4>Computer Response</h4>
-          </div>
-          <div class="panel-body">
-            <form class="form-inline">
-              <div class="form-group">
-                <button value="rock" class="btn btn-warning" disabled id="computer-rock-btn">
-                  <i class="fa fa-hand-rock-o"></i> Rock</button>
-              </div>
-              <div class="form-group">
-                <button value="paper" class="btn btn-warning" disabled id="computer-paper-btn">
-                  <i class="fa fa-hand-paper-o"></i> Paper</button>
-              </div>
-              <div class="form-group">
-                <button  value="scissors" class="btn btn-warning" disabled id="computer-scissors-btn">
-                  <i class="fa fa-hand-scissors-o"></i> Scissors</button>
-              </div>
-            </form>
-            <i class="fa fa-hand-rock-o fa-5x hidden" id="computer-rock-icon"></i>
-            <i class="fa fa-hand-paper-o fa-5x hidden" id="computer-paper-icon"></i>
-            <i class="fa fa-hand-scissors-o fa-5x hidden" id="computer-scissors-icon"></i>
-            <div class="loader center hidden" id="load-icon"></div>
-          </div>
-          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 text-center">
-          <div class="jumbotron hidden">
-            <h4></h4>
-            <button type="submit" value="reset" class="btn btn-primary" id="reset-btn">Play again?</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 
 
+    <script src="app.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script src="app.js"></script>
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <script src="https://use.fontawesome.com/c5ff75be42.js"></script>
+    <script src="https://use.fontawesome.com/c5ff75be42.js"></script>
 </body>
 
 </html>
