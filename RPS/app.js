@@ -31,7 +31,6 @@ const loadIcon = document.querySelector('#load-icon');
 const recordPanel = document.querySelector('#record-panel');
 const recordDisplay = document.querySelector("#record-display");
 const clearButton = document.querySelector("#clear-button");
-console.log(clearButton);
 //message panel and heading components
 const messagePanel = document.querySelector("#message-panel");
 const resultMessage = document.querySelector("#result-message");
