@@ -101,7 +101,7 @@ function loadEventListeners() {
 function rock(e) {
   //assign player choice
   choice = "rock";
-
+  
   e.preventDefault();
 
   //start play
