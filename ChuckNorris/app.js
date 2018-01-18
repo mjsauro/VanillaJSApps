@@ -22,7 +22,7 @@ function getJokes(e) {
           output += `
           <li>${joke.joke}</li>
           `;
-        })
+        });
       } else {
         output += `
         <li>Something went wrong...</li>
