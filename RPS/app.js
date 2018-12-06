@@ -101,7 +101,7 @@ function loadEventListeners() {
 function rock(e) {
   //assign player choice
   choice = "rock";
-  
+
   e.preventDefault();
 
   //start play
@@ -170,7 +170,7 @@ function load() {
   //wait and call function to add icon and active button
   setTimeout(function () {
     computerIconAndButton(compIcon, compBtn);
-  }, 2000, );
+  }, 2000);
 }
 
 //change computer icon and button
@@ -214,13 +214,13 @@ function getResults() {
   } else {
     switch (choice) {
       case "rock":
-        computerChoice === 'scissors' ? win() : lose();
+        if (computerChoice === 'scissors') { win(); } else { lose(); }
         break;
       case 'paper':
-        computerChoice === 'rock' ? win() : lose();
+        if (computerChoice === 'rock') { win(); } else {  lose(); }
         break;
       case "scissors":
-        computerChoice === 'paper' ? win() : lose();
+        if (computerChoice === 'paper') { win(); } else { lose(); }
         break;
     }
   }

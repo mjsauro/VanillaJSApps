@@ -19,6 +19,9 @@
                 <div class="jumbotron text-center">
                     <h2>Rock, Paper, or Scissors?</h2>
                 </div>
+
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
             </div>
         </div>
         <div class="row">
@@ -107,9 +110,23 @@
 
 
 
-
-
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDABJGA3-M9mnQzy_YHa5u7EBFGoxPzjeU",
+        authDomain: "rpswinlosstracker.firebaseapp.com",
+        databaseURL: "https://rpswinlosstracker.firebaseio.com",
+        projectId: "rpswinlosstracker",
+        storageBucket: "rpswinlosstracker.appspot.com",
+        messagingSenderId: "345968406245"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     <script src="app.js"></script>
+    <script src="fbStuff.js"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
